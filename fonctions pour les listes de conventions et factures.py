@@ -5,9 +5,9 @@ Created on Fri May 17 00:44:01 2019
 @author: carole
 """
 
-#import Document.py
-#import Facture.py
-#import Convention.py
+import Document.py
+import Facture.py
+import Convention.py
 
 #initialisation des listes de factures et convention
 #ce sont des listes d'objets de type Convention et de type facture
@@ -40,11 +40,12 @@ def getNbMissionsEnCours():
             nb = nb + 1
     return nb
 
-#affiche les informations de la convention dont on a 
+#affiche la convention dont on a chercher le numero dans la recherche
 def RechercheViaNumeroConvention(numeroConvention):
     for convention in listeConvention:
         if convention.getNumeroConvention()==numeroConvention:
-            print(convention.getNumeroConvention() + " " + convention.getDate() + convention.getNomClient() + convention.getNomEtudiant() + convention.getStatut()) 
+            #affichera sa dans une table qu on construira avec Kivy si on a le temps ..
+            print(convention.getNumeroConvention() + " " + convention.getDate() + convention.getNomClient() + convention.getNomEtudiant() + convention.getStatut() + ) 
             # + get facture status but how????
             
 

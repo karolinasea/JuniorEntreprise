@@ -18,23 +18,17 @@ class Convention(Document):
     descriptionMission
     mentionSpeciale = ""
     statut = "En cours"
+    facture
     
     def __init__(self):
         super().__init__(self)
         numeroConvention=numeroConvention+1
-        self.creerFacture()
+        facture = self.creerFacture()
 		
     def creerFacture():
-        facture = Facture(numeroConvention) 
+        return Facture(numeroConvention) 
         pass
-    
-    #ajoute la convention a la liste de convention et en meme temps 
-    #a la liste de facture puisque la facture est liee a la convention
-    def ajoutConvention():
-        #nomClient = get.text du text field nom client...
-        #nomEtudiant
-        #descriptionMission
-    
+  
     #enregistrer les champs rempli par user
     # et update csv doc 
     def enregistrerBrouillonConvention(self):

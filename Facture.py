@@ -10,7 +10,7 @@ from abc import ABC, abstractmethod
 from reportlab.pdfgen import canvas
 from reportlab.lib.units import inch
 import Document
-import Convention
+import Convention.py
 
 
 class Facture(Document):
@@ -22,7 +22,7 @@ class Facture(Document):
     
     def __init__(self, numeroConvention):
         super().__init__(self)
-        numeroFacture = numeroFacture+1
+        numeroFacture = numeroFacture + 1
         self.numeroConvention = numeroConvention
     
     def setMontant(self, montant): 
@@ -74,7 +74,7 @@ class Facture(Document):
         
         os.startfile(nomfichier+".pdf")
     
-    def changerStatut(self):
+    def changerStatutFacture(self):
         #status changes when user checks Payee in the payment tab in the menu
         if self.statut=="En attente":
             self.statut="Payée"
