@@ -26,7 +26,7 @@ class Document(ABC):
     def modifier(self):
         #menu pour savoir ce qu on modifie
         pass
-	
+    
     def enregistrerPDF(self):
         #if convention changerStatut
         #if facture do not change status

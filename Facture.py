@@ -9,23 +9,25 @@ from datetime import date
 from abc import ABC, abstractmethod
 from reportlab.pdfgen import canvas
 from reportlab.lib.units import inch
+import Document
+import Convention
+
 
 class Facture(Document):
     
     numeroFacture = 0
-    numeroConvention
     statut = "En attente"
-    montant
+    montant = 0
+    numeroConvention
     
-    def __init__(self, numeroConvention, montant):
-		super().__init__(self)
-		numeroFacture=numeroFacture+1
+    def __init__(self, numeroConvention):
+        super().__init__(self)
+        numeroFacture = numeroFacture+1
         self.numeroConvention = numeroConvention
-        self.montant = montant
     
-    def modifier(self): #dont use modifier put setters for all attributes instead
-        #if statut==fini on ne peut pas modifier
-        pass
+    def setMontant(self, montant): 
+        self.montant = montant
+        
     
     #methode PDF facture
     def créerPDFFacture(self):
